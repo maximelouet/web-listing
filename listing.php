@@ -1,8 +1,8 @@
 <?php
 
 // Saumon directory listing
-// MIT License (see "LICENSE" file)
 // https://github.com/maximelouet/web-listing
+// MIT License (see "LICENSE" file)
 
 $title = 'Saumon files';        // page title (used by the browser and search engines)
 $css_file = 'listing.css';      // path to the CSS file used by the page
