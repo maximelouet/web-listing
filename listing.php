@@ -9,7 +9,7 @@ $css_file = 'listing.css';      // path to the CSS file used by the page
 $dir = '.';                     // directory to scan ('.' is the current directory)
 $ignore_hidden_files = true;    // ignore files starting with '.'
 $ignore_directories = true;     // ignore subfolders of the $dir folder
-$ignored_files = [ "index.php", "listing.css" ]; // array of other files to ignore
+$ignored_files = [ "index.php", "listing.php", "listing.css" ]; // array of other files to ignore
 $allow_search_engines = false;  // whether to allow search engines (like Google) to index this page
 
 
