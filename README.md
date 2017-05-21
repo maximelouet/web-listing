@@ -11,7 +11,7 @@ A simple, lightweight and responsive directory listing written in PHP
 You can help by reporting issues and submitting new icons.
 Thank you!
 
-## LICENSE
+## License
 This project is licensed under the MIT License.
 You can do anything you want with the code, as long as you provide attribution back to me, and don’t hold me liable.
 See the `LICENSE` file for more details.
