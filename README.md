@@ -5,7 +5,7 @@ A simple, lightweight and responsive directory listing written in PHP
 
 ## How to use this
 1. Download the files `listing.php` and `listing.css` (or just clone this repo)
-2. Put the files in a web-browseable directory (eventually rename `listing.php` to `index.php`)
+2. Put the files into a web-browseable directory (eventually rename `listing.php` to `index.php`)
 3. Tweak the settings (in `listing.php`) as you want
 4. Enjoy!
 
