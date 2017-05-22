@@ -1,7 +1,7 @@
 # web-listing
 A simple, lightweight and responsive directory listing written in PHP
 
-![Screenshot of the directory listing](https://img.saumon.io/web-listing.png "An example of directory listing")
+![Screenshot of the directory listing](https://img.saumon.io/web-listing.png?from=github-readme "An example of directory listing")
 
 ## How to use this
 1. Download the files `listing.php` and `listing.css` (or just clone this repo)
