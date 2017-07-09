@@ -114,6 +114,7 @@ function get_type($type) {
         case 'application/vnd.openxmlformats-officedocument.presentationml.presentation':
             return 'pres';
             break;
+        case 'application/zip':
         case 'application/gzip':
         case 'application/x-gzip':
             return 'archive';
