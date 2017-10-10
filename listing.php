@@ -23,7 +23,7 @@ $allow_search_engines = false;  // whether to allow search engines (like Google)
     <meta name="robots" content="<?php echo get_search_engine_meta($allow_search_engines); ?>">
 </head>
 <body>
-
+    
 <?php
 
 $files = get_files($dir, $ignore_hidden_files, $ignore_directories, $ignored_files);
@@ -40,16 +40,16 @@ function get_files($dir, $ignore_hidden_files, $ignore_directories, $ignored_fil
     $files = array();
 
     foreach($d as $fileinfo) {
-	if (($fileinfo->isDot()) ||
-	    ($ignore_hidden_files && substr($fileinfo->getFilename(), 0, 1) == ".") ||
-	    ($ignore_directories && $fileinfo->isDir()) ||
-	    (in_array($fileinfo->getFilename(), $ignored_files)))
-	    continue;
-	$files[] = array(
-	    'name' => "{$fileinfo}",
-	    'type' => ($fileinfo->getType() == "dir") ? "dir" : mime_content_type($fileinfo->getRealPath()),
-	    'size' => $fileinfo->getSize()
-	);
+        if (($fileinfo->isDot()) ||
+            ($ignore_hidden_files && substr($fileinfo->getFilename(), 0, 1) == ".") ||
+            ($ignore_directories && $fileinfo->isDir()) ||
+            (in_array($fileinfo->getFilename(), $ignored_files)))
+            continue;
+        $files[] = array(
+            'name' => "{$fileinfo}",
+            'type' => ($fileinfo->getType() == "dir") ? "dir" : mime_content_type($fileinfo->getRealPath()),
+            'size' => $fileinfo->getSize()
+        );
     }
 
     usort($files, 'compare_by_name');
@@ -58,8 +58,8 @@ function get_files($dir, $ignore_hidden_files, $ignore_directories, $ignored_fil
 
 function print_files_table($files) {
     if (empty($files)) {
-	echo "\t" . '<p>No files to show.</p>' . "\n";
-	return;
+        echo "\t" . '<p>No files to show.</p>' . "\n";
+        return;
     }
 
     $files_count = 0;
@@ -72,7 +72,7 @@ function print_files_table($files) {
       $type = get_type($file['type']);
       $human_size = get_human_size($size);
       $size_class = get_size_class($size);
-
+      
       $table .= "\t\t" . '<tr class="' . $type . '">' . "\n";
       $table .= "\t\t\t" . '<td><a href="' . $name . '">' . $name . '</a></td>';
       $table .= '<td class="' . $size_class . '">' . $human_size . '</td>' . "\n";
@@ -96,43 +96,43 @@ function print_footer($files_count) {
 
 function get_type($type) {
     switch ($type) {
-	case 'application/pdf':
-	    return 'pdf';
-	    break;
-	case 'application/vnd.oasis.opendocument.text':
-	case 'application/msword':
-	case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
-	    return 'doc';
-	    break;
-	case 'application/vnd.oasis.opendocument.spreadsheet':
-	case 'application/vnd.ms-excel':
-	case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
-	    return 'calc';
-	    break;
-	case 'application/vnd.oasis.opendocument.presentation':
-	case 'application/vnd.ms-powerpoint':
-	case 'application/vnd.openxmlformats-officedocument.presentationml.presentation':
-	    return 'pres';
-	    break;
-	case 'application/zip':
-	case 'application/gzip':
-	case 'application/x-gzip':
-	    return 'archive';
-	    break;
-	default:
-	    $typearr = explode("/", $type, 2);
-	    return $typearr[0];
-	    break;
+        case 'application/pdf':
+            return 'pdf';
+            break;
+        case 'application/vnd.oasis.opendocument.text':
+        case 'application/msword':
+        case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
+            return 'doc';
+            break;
+        case 'application/vnd.oasis.opendocument.spreadsheet':
+        case 'application/vnd.ms-excel':
+        case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
+            return 'calc';
+            break;
+        case 'application/vnd.oasis.opendocument.presentation':
+        case 'application/vnd.ms-powerpoint':
+        case 'application/vnd.openxmlformats-officedocument.presentationml.presentation':
+            return 'pres';
+            break;
+        case 'application/zip':
+        case 'application/gzip':
+        case 'application/x-gzip':
+            return 'archive';
+            break;
+        default:
+            $typearr = explode("/", $type, 2);
+            return $typearr[0];
+            break;
     }
 }
 
 function get_size_class($size) {
     if ($size >= 52428800) // 50 MB
-	return 'big';
+        return 'big';
     else if ($size >= 20971520) // 20 MB
-	return 'middle';
+        return 'middle';
     else
-	return 'small';
+        return 'small';
 }
 
 function get_human_size($bytes, $decimals = 0) {
@@ -147,7 +147,7 @@ function compare_by_name($a, $b) {
 
 function get_search_engine_meta($allow) {
     if ($allow)
-	return 'index';
+        return 'index';
     else
-	return 'noindex, nofollow';
+        return 'noindex, nofollow';
 }
