@@ -74,7 +74,7 @@ function print_files_table($files) {
       $size_class = get_size_class($size);
       
       $table .= "\t\t" . '<tr class="' . $type . '">' . "\n";
-      $table .= "\t\t\t" . '<td><a href="/' . $name . '">' . $name . '</a></td>';
+      $table .= "\t\t\t" . '<td><a href="' . $name . '">' . $name . '</a></td>';
       $table .= '<td class="' . $size_class . '">' . $human_size . '</td>' . "\n";
       $table .= "\t\t" . '</tr>' . "\n";
     }
