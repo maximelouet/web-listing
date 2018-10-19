@@ -1,4 +1,7 @@
 # web-listing
+
+[![GuardRails badge](https://badges.production.guardrails.io/maximelouet/web-listing.svg)](https://www.guardrails.io)
+
 A simple, lightweight and responsive directory listing written in PHP
 
 ![Screenshot of the directory listing](https://img.saumon.io/web-listing.png?from=github-readme "An example of directory listing")
